@@ -1,27 +1,27 @@
-# Slim Framework 3 Skeleton Application
+# Slim Framework 3 Estrutura de Aplicação
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+Esta estrutura de aplicação é baseada em slim/Slim-Skeleton e pode ser utilizada para criar e começar a trabalhar rapidamente em uma aplicação baseada no Slim Framework 3. Esta aplicação renderiza PHP-View e Monolog.
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+Esta estrutura de aplicação foi construída com Composer, permitindo uma construção rápida e fácil da sua aplicação Slim.
 
-## Install the Application
+## Instalando a Aplicação
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+Execute este comando a partir do diretório em que você quer instalar sua aplicação Slim.
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+    php composer.phar create-project ramcoelho/slim-skeleton [nome-da-minha-aplicacao]
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+Troque `[nome-da-minha-aplicacao]` pelo nome desejado. Você também precisará:
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
+* Apontar a raiz de documento do seu host virtual para o diretório `public/` da sua aplicação.
+* Garantir que o diretório `logs/` tem permissão de escrita para o usuário do apache/nginx.
 
-To run the application in development, you can run these commands 
+Para executar a aplicação em desenvolvimento, execute estes comandos:
 
-	cd [my-app-name]
+	cd [nome-da-minha-aplicacao]
 	php composer.phar start
 
-Run this command in the application directory to run the test suite
+Execute este comando para executar a rotina de testes:
 
 	php composer.phar test
 
-That's it! Now go build something cool.
+Isto é tudo! Agora vá e construa algo legal.
