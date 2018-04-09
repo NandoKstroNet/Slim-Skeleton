@@ -1,6 +1,6 @@
 {
-    "name": "slim/slim-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development",
+    "name": "ramcoelho/slim-skeleton",
+    "description": "Uma estrutura de aplicação Slim Framework 3.0 para desenvolvimento rápido. Baseado em slim/slim-skeleton",
     "keywords": ["microframework", "rest", "router", "psr7"],
     "homepage": "http://github.com/slimphp/Slim-Skeleton",
     "license": "MIT",
