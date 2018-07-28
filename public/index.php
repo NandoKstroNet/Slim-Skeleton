@@ -1,4 +1,7 @@
 <?php
+
+define('CONFIG_FILE', 'private/config.json');
+
 if (PHP_SAPI == 'cli-server') {
     // To help the built-in PHP dev server, check if the request was actually for
     // something which should probably be served as a static file
@@ -9,22 +12,19 @@ if (PHP_SAPI == 'cli-server') {
     }
 }
 
-require __DIR__ . '/../vendor/autoload.php';
-
 session_start();
 
-// Instantiate the app
-$settings = require __DIR__ . '/../src/settings.php';
-$app = new \Slim\App($settings);
+chdir(dirname(__DIR__));
 
-// Set up dependencies
-require __DIR__ . '/../src/dependencies.php';
+require 'vendor/autoload.php';
 
-// Register middleware
-require __DIR__ . '/../src/middleware.php';
+$config = \Service\ConfigReader::read();
 
-// Register routes
-require __DIR__ . '/../src/routes.php';
+$app = new \Slim\App((array) $config);
 
-// Run app
+\Service\DependencyProvider::setup($app);
+\Service\RouteProvider::setup($app);
+\Service\ConfigProvider::setup($app);
+\Service\DatabaseProvider::setup($app);
+
 $app->run();
